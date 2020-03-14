@@ -11,8 +11,7 @@ def sort(A,low,up):
     
 def partition(A,low,up):
     piv = A[low]
-    i = low+1
-    j = up
+    i, j = low+1, up
     while i<=j:
         while A[i]<piv and i<up:
             i += 1
@@ -26,8 +25,7 @@ def partition(A,low,up):
             j -= 1
         else:
             break
-    A[low] = A[j]
-    A[j] = piv
+    A[low], A[j] = A[j], piv
     return j
  
 print(Quick([4, 3, 5, 1, 6, 2]))
